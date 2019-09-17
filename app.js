@@ -24,7 +24,7 @@ app.get('/about', (req, res) => {
 });
 
 //Route to all of the project pages
-app.get('/project/:id', (req, res) => {
+app.get('/project/:id(\[0-5])/', (req, res) => {
     const {id} = req.params
     res.render('project', {data, id})
 });
@@ -43,4 +43,6 @@ app.use((err, req, res, next) => {
 });
 
 //Display app on localhost
-app.listen(3000);
+app.listen(3000, () => {
+    console.log("The app is now running on localhost!");
+});
